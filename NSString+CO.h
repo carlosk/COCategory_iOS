@@ -35,4 +35,6 @@
 
 - (NSArray *) coSplit:(NSString*) separator;
 
+//MD5加密
+-(NSString *)coMD5;
 @end

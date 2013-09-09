@@ -13,6 +13,7 @@
 #import "UIScrollView+CO.h"
 #import "UILabel+CO.h"
 #import "UIButton+CO.h"
+#import "UIColor+CO.h"
 
 
 @interface COCategory : NSObject

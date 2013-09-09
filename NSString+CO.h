@@ -37,4 +37,8 @@
 
 //MD5加密
 -(NSString *)coMD5;
+
+#pragma mark verify
+//校验手机号码
+-(BOOL)verifyPhone;
 @end

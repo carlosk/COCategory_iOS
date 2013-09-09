@@ -40,5 +40,5 @@
 
 #pragma mark verify
 //校验手机号码
--(BOOL)verifyPhone;
+-(BOOL)coVerifyPhone;
 @end

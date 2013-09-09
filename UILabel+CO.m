@@ -18,7 +18,7 @@
 //根据内容和宽度获取高度
 -(float )coSizeWithContent{
     
-    return [self.text sizeWithFont:self.font  constrainedToSize:CGSizeMake(self.frame.size.width,100000)  lineBreakMode:UILineBreakModeWordWrap].height;
+    return [self.text sizeWithFont:self.font  constrainedToSize:CGSizeMake(self.frame.size.width,100000)  lineBreakMode:NSLineBreakByWordWrapping].height;
 }
 
 @end

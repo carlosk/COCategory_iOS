@@ -87,7 +87,7 @@
 
 #pragma mark verify
 //校验手机号码
--(BOOL)verifyPhone{
+-(BOOL)coVerifyPhone{
 
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^(((15[012356789]{1})|(18[02356789]{1})|(13[0-9]{1})|(14[57]{1}))+[0-9]{8})$" options:NSRegularExpressionCaseInsensitive error:nil];
     

@@ -22,7 +22,7 @@
 }
 
 - (BOOL) coEquals:(NSString*) anotherString {
-    return [self isEqualToString:anotherString];
+    return [self isEqual:anotherString];
 }
 
 - (BOOL) coEqualsIgnoreCase:(NSString*) anotherString {

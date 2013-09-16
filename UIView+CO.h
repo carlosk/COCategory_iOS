@@ -38,5 +38,7 @@
 -(void)coAutoWCenter;
 //在父控件中上下居中
 - (void)coAutoHCenter;
+//清理背景色
+- (void) clearBackground;
 
 @end

@@ -82,4 +82,9 @@
     self.frame  = CGRectMake(selfF.origin.x, superF.size.height/2 - selfF.size.height/2, superF.size.width, selfF.size.height);
 }
 
+//清理背景色
+- (void) clearBackground{
+    self.backgroundColor = [UIColor clearColor];
+}
+
 @end

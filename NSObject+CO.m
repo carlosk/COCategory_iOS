@@ -11,7 +11,7 @@
 @implementation NSObject (CO)
 //是否是空的
 - (BOOL)isEmpty{
-    return [self isNotEmpty];
+    return ![self isNotEmpty];
 }
 
 //是否是不为空的

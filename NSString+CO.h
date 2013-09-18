@@ -41,4 +41,10 @@
 #pragma mark verify
 //校验手机号码
 -(BOOL)coVerifyPhone;
+//校验身份证
+- (BOOL)coVerifyIdentityCard;
+//校验email
+- (BOOL)coVerifyEmail;
+//基本的校验方法
+- (BOOL)coVerifyBase:(NSString *)regexStr;
 @end

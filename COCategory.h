@@ -16,6 +16,7 @@
 #import "UIColor+CO.h"
 #import "NSDate+CO.h"
 #import "UIDevice+CO.h"
+#import "NSData+CO.h"
 
 
 @interface COCategory : NSObject

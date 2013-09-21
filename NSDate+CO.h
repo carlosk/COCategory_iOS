@@ -10,9 +10,9 @@
 
 @interface NSDate (CO)
 //字符串转换成日期
-+(NSDate *)converToDate:(NSString *)mDateContent;
++(NSDate *) converToDate:(NSString *)mDateContent;
 //字符串转换成日期
-+(NSDate *)converToDate:(NSString *)mDateContent withFormat:(NSString *)format;
++(NSDate *) converToDate:(NSString *)mDateContent withFormat:(NSString *)format;
 
 //根据日期获取年月日时分秒
 - (NSString *) converToString;

@@ -10,7 +10,7 @@
 
 @interface NSData (CO)
 //转换成中文GBK编码
-- (NSString *)coConverGBKString;
+- (NSString *) converGBKString;
 //转换成UTF8的字符串
-- (NSString *)coConverUTF8String;
+- (NSString *) converUTF8String;
 @end

@@ -10,41 +10,41 @@
 
 @interface NSString (CO)
 
-- (BOOL) coContains:(NSString*) str;
+- (BOOL) contains:(NSString*) str;
 
-- (BOOL) coStartsWith:(NSString*)prefix;
+- (BOOL) startsWith:(NSString*)prefix;
 
-- (BOOL) coEquals:(NSString*) anotherString;
+- (BOOL) equals:(NSString*) anotherString;
 
-- (BOOL) coEqualsIgnoreCase:(NSString*) anotherString;
+- (BOOL) equalsIgnoreCase:(NSString*) anotherString;
 
 
-- (int) coLastIndexOfString:(NSString*)str;
+- (int) lastIndexOfString:(NSString*)str;
 
-- (int) coLastIndexOfString:(NSString*)str fromIndex:(int)index;
+- (int) lastIndexOfString:(NSString*)str fromIndex:(int)index;
 
-- (NSString *) coSubstringFromIndex:(int)beginIndex toIndex:(int)endIndex;
+- (NSString *) substringFromIndex:(int)beginIndex toIndex:(int)endIndex;
 
-- (NSString *) coToLowerCase;
+- (NSString *) toLowerCase;
 
-- (NSString *) coToUpperCase;
+- (NSString *) toUpperCase;
 
-- (NSString *) coTrim;
+- (NSString *) trim;
 
-- (NSString *) coReplaceAll:(NSString*)origin with:(NSString*)replacement;
+- (NSString *) replaceAll:(NSString*)origin with:(NSString*)replacement;
 
-- (NSArray *) coSplit:(NSString*) separator;
+- (NSArray *) split:(NSString*) separator;
 
 //MD5加密
--(NSString *)coMD5;
+-(NSString *)md5;
 
 #pragma mark verify
 //校验手机号码
--(BOOL)coVerifyPhone;
+-(BOOL) verifyPhone;
 //校验身份证
-- (BOOL)coVerifyIdentityCard;
+- (BOOL) verifyIdentityCard;
 //校验email
-- (BOOL)coVerifyEmail;
+- (BOOL) verifyEmail;
 //基本的校验方法
-- (BOOL)coVerifyBase:(NSString *)regexStr;
+- (BOOL) verifyBase:(NSString *)regexStr;
 @end

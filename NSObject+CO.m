@@ -18,7 +18,7 @@
 - (BOOL)isNotEmpty{
     if ([self isKindOfClass:[NSString class]]) {
         NSString *str = (NSString *)self;
-        return str && ![[str coTrim] isEqual:@""];
+        return str && ![[str trim] isEqual:@""];
     }else if ([self isKindOfClass:[NSArray class]]){
         return ((NSArray *)self).count > 0;
     }else if ([self isKindOfClass:[NSDictionary class]]){

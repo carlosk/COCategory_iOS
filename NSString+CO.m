@@ -12,25 +12,25 @@
 
 #define JavaNotFound -1
 
-- (BOOL) coContains:(NSString*) str {
+- (BOOL) contains:(NSString*) str {
     NSRange range = [self rangeOfString:str];
     return (range.location != NSNotFound);
 }
 
-- (BOOL) coStartsWith:(NSString*)prefix {
+- (BOOL) startsWith:(NSString*)prefix {
     return [self hasPrefix:prefix];
 }
 
-- (BOOL) coEquals:(NSString*) anotherString {
+- (BOOL) equals:(NSString*) anotherString {
     return [self isEqual:anotherString];
 }
 
-- (BOOL) coEqualsIgnoreCase:(NSString*) anotherString {
-    return [[self coToLowerCase] coEquals:[anotherString coToLowerCase]];
+- (BOOL) equalsIgnoreCase:(NSString*) anotherString {
+    return [[self toLowerCase] equals:[anotherString toLowerCase]];
 }
 
 
-- (int) coLastIndexOfString:(NSString*)str {
+- (int) lastIndexOfString:(NSString*)str {
     NSRange range = [self rangeOfString:str options:NSBackwardsSearch];
     if (range.location == NSNotFound) {
         return JavaNotFound;
@@ -38,7 +38,7 @@
     return range.location;
 }
 
-- (int) coLastIndexOfString:(NSString*)str fromIndex:(int)index {
+- (int) lastIndexOfString:(NSString*)str fromIndex:(int)index {
     NSRange fromRange = NSMakeRange(0, index);
     NSRange range = [self rangeOfString:str options:NSBackwardsSearch range:fromRange];
     if (range.location == NSNotFound) {
@@ -47,7 +47,7 @@
     return range.location;
 }
 
-- (NSString *) coSubstringFromIndex:(int)beginIndex toIndex:(int)endIndex {
+- (NSString *) substringFromIndex:(int)beginIndex toIndex:(int)endIndex {
     if (endIndex <= beginIndex) {
         return @"";
     }
@@ -55,27 +55,27 @@
     return [self substringWithRange:range];
 }
 
-- (NSString *) coToLowerCase {
+- (NSString *) toLowerCase {
     return [self lowercaseString];
 }
 
-- (NSString *) coToUpperCase {
+- (NSString *) toUpperCase {
     return [self uppercaseString];
 }
 
-- (NSString *) coTrim {
+- (NSString *) trim {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-- (NSString *) coReplaceAll:(NSString*)origin with:(NSString*)replacement {
+- (NSString *) replaceAll:(NSString*)origin with:(NSString*)replacement {
     return [self stringByReplacingOccurrencesOfString:origin withString:replacement];
 }
 
-- (NSArray *) coSplit:(NSString*) separator {
+- (NSArray *) split:(NSString*) separator {
     return [self componentsSeparatedByString:separator];
 }
 //MD5加密
--(NSString *)coMD5{
+-(NSString *)md5{
     const char *original_str = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5(original_str, strlen(original_str), result);
@@ -87,22 +87,22 @@
 
 #pragma mark verify
 //校验手机号码
--(BOOL)coVerifyPhone{
-    return [self coVerifyBase:@"^(((15[012356789]{1})|(18[02356789]{1})|(13[0-9]{1})|(14[57]{1}))+[0-9]{8})$"];
+-(BOOL) verifyPhone{
+    return [self verifyBase:@"^(((15[012356789]{1})|(18[02356789]{1})|(13[0-9]{1})|(14[57]{1}))+[0-9]{8})$"];
 }
 
 //校验身份证
-- (BOOL)coVerifyIdentityCard{
+- (BOOL) verifyIdentityCard{
     NSString *regexStr = @"\\d{15}|\\d{18}";
-    return [self coVerifyBase:regexStr];
+    return [self verifyBase:regexStr];
 }
 //校验email
-- (BOOL)coVerifyEmail{
+- (BOOL) verifyEmail{
 
-    return [self coVerifyBase:@"\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"];
+    return [self verifyBase:@"\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"];
 }
 //基本的校验方法
-- (BOOL)coVerifyBase:(NSString *)regexStr{
+- (BOOL) verifyBase:(NSString *)regexStr{
     if (!regexStr) {
         return NO;
     }

@@ -10,7 +10,7 @@
 
 @implementation UIColor (CO)
 //颜色转换成Image
-- (UIImage *)coTransformImage
+- (UIImage *)transformImage
 {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);

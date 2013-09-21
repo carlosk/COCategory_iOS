@@ -10,8 +10,8 @@
 
 @interface UILabel (CO)
 //根据文字内容设置高度
-- (void)coSetAutoHeightWithContent;
+- (void)setAutoHeightWithContent;
 
 //根据内容和宽度获取高度
--(float )coSizeWithContent;
+-(float )sizeWithContent;
 @end

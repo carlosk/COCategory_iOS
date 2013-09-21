@@ -10,5 +10,5 @@
 
 @interface UIColor (CO)
 //颜色转换成Image
-- (UIImage *)coTransformImage;
+- (UIImage *)transformImage;
 @end

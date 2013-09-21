@@ -10,7 +10,7 @@
 
 @implementation NSDate (CO)
 //字符串转换成日期
-+(NSDate *)converToDate:(NSString *)mDateContent{
++(NSDate *) converToDate:(NSString *)mDateContent{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *date=[formatter dateFromString:mDateContent];
@@ -18,7 +18,7 @@
 }
 
 //字符串转换成日期
-+(NSDate *)converToDate:(NSString *)mDateContent withFormat:(NSString *)format{
++(NSDate *) converToDate:(NSString *)mDateContent withFormat:(NSString *)format{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
     [formatter setDateFormat:format];
     NSDate *date=[formatter dateFromString:mDateContent];

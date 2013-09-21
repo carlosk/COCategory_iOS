@@ -10,7 +10,7 @@
 
 @implementation UIView (CO)
 //根据Xib文件创建View
-+(id)coCreateWithXib:(NSString *)xibName;
++(id) createWithXib:(NSString *)xibName;
 {
     if (!xibName) {
         id temp = [[[self class] alloc]init];
@@ -22,7 +22,7 @@
 }
 
 //把所有的子View加在父View里
--(void)coAddSubVs:(UIView *)object, ...
+-(void) addSubVs:(UIView *)object, ...
 {
     va_list argp = NULL;
     va_start(argp, object);
@@ -36,47 +36,47 @@
 }
 
 //给view添加按键事件
--(void)coAddTagEven:(SEL) mSel withTarget:(id)target{
+-(void) addTagEven:(SEL) mSel withTarget:(id)target{
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:target action:mSel];
     [self addGestureRecognizer:singleTap];
 }
 
 #pragma mark Frame
--(void)coSetY:(float) y {
+-(void) setY:(float) y {
     self.frame = CGRectMake(self.frame.origin.x, y, self.frame.size.width, self.frame.size.height);
 }
 
--(void)coSetX:(float) x {
+-(void) setX:(float) x {
     self.frame = CGRectMake(x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
 }
 
--(void)coSetX:(float) x withY:(float)y{
+-(void) setX:(float) x withY:(float)y{
     self.frame = CGRectMake(x, y, self.frame.size.width, self.frame.size.height);
 }
 
--(void)coSetH:(float) h {
+-(void) setH:(float) h {
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, h);
 }
 
--(void)coSetW:(float) w {
+-(void) setW:(float) w {
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, w, self.frame.size.height);
 }
 
--(void)coSetW:(float) w withH:(float)h{
+-(void) setW:(float) w withH:(float)h{
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, w, h);
 }
 //设置Y坐标，距离aboveView的interval距离
--(void)coSetYAbove:(float)interval withView:(UIView *)aboveView{
+-(void) setYAbove:(float)interval withView:(UIView *)aboveView{
     self.frame = CGRectMake(self.frame.origin.x, aboveView.frame.origin.y + aboveView.frame.size.height+interval, self.frame.size.width, self.frame.size.height);
 }
 //在父控件中左右居中
--(void)coAutoWCenter{
+-(void) autoWCenter{
     CGRect superF = self.superview.frame;
     CGRect selfF = self.frame;
     self.frame  = CGRectMake(superF.size.width/2 - selfF.size.width/2, selfF.origin.y, superF.size.width, selfF.size.height);
 }
 //在父控件中上下居中
-- (void)coAutoHCenter{
+- (void) autoHCenter{
     CGRect superF = self.superview.frame;
     CGRect selfF = self.frame;
     self.frame  = CGRectMake(selfF.origin.x, superF.size.height/2 - selfF.size.height/2, superF.size.width, selfF.size.height);
